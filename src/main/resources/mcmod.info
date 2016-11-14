@@ -1,0 +1,17 @@
+[
+{
+  "modid": "plutomc_power",
+  "name": "PlutoMC Power",
+  "description": "Power mod, extends Core.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Wincinderith"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": ["plutomc_core"],
+  "parent": "plutomc_core"
+}
+]
