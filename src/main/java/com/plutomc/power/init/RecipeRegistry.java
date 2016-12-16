@@ -1,8 +1,11 @@
 package com.plutomc.power.init;
 
+import com.plutomc.core.common.crafting.AlloyFurnaceRecipes;
 import com.plutomc.core.common.crafting.QuernStoneRecipes;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+
+import java.util.ArrayList;
 
 /**
  * plutomc_power
@@ -25,7 +28,16 @@ public class RecipeRegistry
 {
 	public static void init()
 	{
+		registerAlloySmelting();
 		registerQuernGrinding();
+	}
+
+	private static void registerAlloySmelting()
+	{
+		AlloyFurnaceRecipes.instance().addSmeltingRecipe(new ArrayList<ItemStack>() {{
+			add(new ItemStack(ItemRegistry.SILICA));
+			add(new ItemStack(com.plutomc.core.init.ItemRegistry.ASH));
+		}}, new ItemStack(ItemRegistry.SILICON), 1.4f);
 	}
 
 	private static void registerQuernGrinding()

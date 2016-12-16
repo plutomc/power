@@ -25,7 +25,8 @@ public class ItemRegistry
 {
 	public enum Data implements IDataItem
 	{
-		SILICA("silica", null, CreativeTabs.MATERIALS);
+		SILICA("silica", null, CreativeTabs.MATERIALS),
+		SILICON("silicon", null, CreativeTabs.MATERIALS);
 
 		private final String name;
 		private final String oreDictName;
@@ -64,14 +65,27 @@ public class ItemRegistry
 	}
 
 	public static final BaseItem SILICA = new BaseItem(Data.SILICA);
+	public static final BaseItem SILICON = new BaseItem(Data.SILICON);
 
 	public static void preInit()
 	{
-		com.plutomc.core.init.ItemRegistry.register(SILICA);
+		register(SILICA);
+		register(SILICON);
+	}
+
+	private static void register(BaseItem item)
+	{
+		com.plutomc.core.init.ItemRegistry.register(item);
 	}
 
 	public static void registerRenders()
 	{
-		com.plutomc.core.init.ItemRegistry.registerRender(SILICA);
+		registerRender(SILICA);
+		registerRender(SILICON);
+	}
+
+	private static void registerRender(BaseItem item)
+	{
+		com.plutomc.core.init.ItemRegistry.registerRender(item);
 	}
 }
