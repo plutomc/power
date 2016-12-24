@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"facing=north": { "model": "plutomc_power:engine_combustion" },
+		"facing=south": { "model": "plutomc_power:engine_combustion", "y": 180 },
+		"facing=west":  { "model": "plutomc_power:engine_combustion", "y": 270 },
+		"facing=east":  { "model": "plutomc_power:engine_combustion", "y": 90 }
+	}
+}

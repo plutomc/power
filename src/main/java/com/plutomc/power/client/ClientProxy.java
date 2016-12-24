@@ -1,6 +1,7 @@
 package com.plutomc.power.client;
 
 import com.plutomc.core.common.ICommonProxy;
+import com.plutomc.power.init.BlockRegistry;
 import com.plutomc.power.init.ItemRegistry;
 
 /**
@@ -25,6 +26,7 @@ public class ClientProxy implements ICommonProxy
 	@Override
 	public void preInit()
 	{
+		BlockRegistry.registerRenders();
 		ItemRegistry.registerRenders();
 	}
 

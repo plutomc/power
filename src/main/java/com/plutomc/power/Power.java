@@ -1,6 +1,7 @@
 package com.plutomc.power;
 
 import com.plutomc.core.common.ICommonProxy;
+import com.plutomc.power.init.BlockRegistry;
 import com.plutomc.power.init.ItemRegistry;
 import com.plutomc.power.init.RecipeRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -46,6 +47,7 @@ public class Power
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		BlockRegistry.preInit();
 		ItemRegistry.preInit();
 
 		proxy.preInit();

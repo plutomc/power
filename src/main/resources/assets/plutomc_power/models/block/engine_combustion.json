@@ -1,0 +1,9 @@
+{
+	"parent": "block/orientable",
+	"textures": {
+		"top": "plutomc_power:blocks/machine_casing",
+		"front": "plutomc_power:blocks/engine_combustion_front",
+		"south": "plutomc_power:blocks/machine_casing",
+		"side": "plutomc_power:blocks/engine_combustion_side"
+	}
+}
