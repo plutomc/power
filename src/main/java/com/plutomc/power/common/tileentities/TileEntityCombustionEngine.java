@@ -1,9 +1,11 @@
 package com.plutomc.power.common.tileentities;
 
 import com.plutomc.core.common.tileentities.BaseTileEntityInventory;
+import com.plutomc.power.common.containers.slots.SlotCombustionEngineFuel;
+import com.plutomc.power.common.containers.slots.SlotCombustionEngineSpark;
 import com.plutomc.power.init.BlockRegistry;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 
 import javax.annotation.Nonnull;
@@ -85,18 +87,23 @@ public class TileEntityCombustionEngine extends BaseTileEntityInventory
 		}
 	}
 
+	@Nonnull
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound)
+	{
+		return super.writeToNBT(compound);
+	}
+
+	@Override
+	public void readFromNBT(NBTTagCompound compound)
+	{
+		super.readFromNBT(compound);
+	}
+
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack)
 	{
-		//  TODO: Move checks to Slots.
-		if (index == 0)
-		{
-			return stack.isItemEqual(new ItemStack(Items.COAL));
-		}
-		else
-		{
-			return stack.isItemEqual(new ItemStack(Items.FLINT));
-		}
+		return index == 0 ? SlotCombustionEngineSpark.isItemSpark(stack) : SlotCombustionEngineFuel.isItemFuel(stack);
 	}
 
 	@Override

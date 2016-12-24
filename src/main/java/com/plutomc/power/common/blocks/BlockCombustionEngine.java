@@ -1,8 +1,10 @@
 package com.plutomc.power.common.blocks;
 
 import com.plutomc.core.common.blocks.BlockMetal;
+import com.plutomc.power.Power;
 import com.plutomc.power.common.tileentities.TileEntityCombustionEngine;
 import com.plutomc.power.init.BlockRegistry;
+import com.plutomc.power.init.GuiHandler;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
@@ -97,7 +99,10 @@ public class BlockCombustionEngine extends BlockMetal implements ITileEntityProv
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
 	{
-		// TODO: Open GUI.
+		if (!worldIn.isRemote)
+		{
+			playerIn.openGui(Power.instance(), GuiHandler.ENGINE_COMBUSTION, worldIn, pos.getX(), pos.getY(), pos.getZ());
+		}
 
 		return true;
 	}

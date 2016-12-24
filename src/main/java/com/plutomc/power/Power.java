@@ -2,6 +2,7 @@ package com.plutomc.power;
 
 import com.plutomc.core.common.ICommonProxy;
 import com.plutomc.power.init.BlockRegistry;
+import com.plutomc.power.init.GuiHandler;
 import com.plutomc.power.init.ItemRegistry;
 import com.plutomc.power.init.RecipeRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 /**
  * plutomc_power
@@ -57,6 +59,7 @@ public class Power
     public void init(FMLInitializationEvent event)
     {
 		RecipeRegistry.init();
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 
     	proxy.init();
     }
