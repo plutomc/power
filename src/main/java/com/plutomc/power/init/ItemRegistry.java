@@ -25,7 +25,6 @@ public class ItemRegistry
 {
 	public enum Data implements IDataItem
 	{
-		SILICA("silica", null, CreativeTabs.MATERIALS),
 		SILICON("silicon", null, CreativeTabs.MATERIALS);
 
 		private final String name;
@@ -64,12 +63,10 @@ public class ItemRegistry
 		}
 	}
 
-	public static final BaseItem SILICA = new BaseItem(Data.SILICA);
 	public static final BaseItem SILICON = new BaseItem(Data.SILICON);
 
 	public static void preInit()
 	{
-		register(SILICA);
 		register(SILICON);
 	}
 
@@ -80,7 +77,6 @@ public class ItemRegistry
 
 	public static void registerRenders()
 	{
-		registerRender(SILICA);
 		registerRender(SILICON);
 	}
 
